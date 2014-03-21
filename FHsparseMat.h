@@ -1,10 +1,4 @@
 /*
-Name:
-Class:
-Date:
-Instructor:
-Name of file: a2_1.cpp
-
 Description:
 The program allocates a large matrix (such as 100000 x 100000) by sparse matrix
 algorithm without using disk storage. Each row of the matrix is a linked list
@@ -115,7 +109,7 @@ Pre: N/A
 Post: The last element has been removed (if vector is not empty)
 
 const FHvector<Object>& operator= (const FHvector& rhs);
-Pre: N/A
+Pre: N/AFSp
 Post: The data from RHS has been copied to this vector
 
 ~FHvector () { delete[] mObjects; }
@@ -865,8 +859,20 @@ public:
     SparseMat( int r, int c, const Object & defaultVal): ROWS(r), COLS(c), defaultValue(defaultVal), vector(r){ }
     const Object & get(int r, int c) const;
     bool set(int r, int c, const Object &x);
-    void clear();
+    void clear()
+    {
+        int i;
+        for(i=0;i<ROWS;i++)
+        {
+            vector[i].clear();
+        }
+    }
+    void reset()
+    {
+
+    }
     void showSubSquare(int start, int size);
+    void show();
     bool search(const Object &x, int& row, int& col);
 private:
     int ROWS;
@@ -943,8 +949,8 @@ template <class Object>
 const Object & SparseMat<Object>::get(int r, int c) const
 {
     if (r < 0 || r >= ROWS || c < 0 || c >= COLS)
-        throw FHvector<FHlist<MatNode<Object> > >::OutOfBoundsException();
-    bool existing = false;
+        throw typename FHvector<FHlist<MatNode<Object> > >::OutOfBoundsException();
+    //bool existing = false;
     if (vector[r].size() > 0){
         typename FHlist<MatNode<Object> >::const_iterator iter;
         for (iter = vector[r].begin(); iter != vector[r].end(); iter++)
@@ -978,15 +984,30 @@ void SparseMat<Object>::showSubSquare(int start, int size)
 {
     for (int r = start; r < start + size; r++){
         for (int c = start; c < start + size; c++){
-            cout << setw(4) << get(r,c);
+            cout << get(r,c);
         }
         cout << endl;
     }
     cout << endl;
+}
+
+template <class Object>
+void SparseMat<Object>::show()
+{
+    string line="----------------------------------------------------------------------";
+    cout<<line<<endl;
+    for (int r = 0; r < ROWS; r++){
+        for (int c = 0; c < COLS; c++){
+            cout << get(r,c);
+        }
+        cout << endl;
+    }
+    cout << endl;
+    cout<<line<<endl;
 }
 #endif
 
 
 
 
-typedef SparseMat<MatNode <float> > SpMat;
+typedef SparseMat<MatNode <char> > SpMat;

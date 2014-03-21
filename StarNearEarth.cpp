@@ -100,7 +100,7 @@ StarNearEarthReader::StarNearEarthReader(string fileName)
       return;
    }
    starFile = fileName;
-
+   //cout<<"came"<<endl;
    // open file for reading
    ifstream infile(fileName.c_str());
    if (!infile)
