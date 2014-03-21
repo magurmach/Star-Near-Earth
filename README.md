@@ -29,9 +29,9 @@ A linked list implementation of sparse matrix.  Provided methods are:<br>
 
 ##Coordinate compression
 
-It is not possible to demonstrate the real distance among these stars. So, we have used coordinate compression scheme. All coordinate has been compressed into `(35 X 70)`. So, all the coordinate are represented among these grid.
+It is not possible to demonstrate the real distance among these stars. So, we have used coordinate compression scheme. All coordinate has been compressed into `(35 X 70)`. So, all the coordinate are represented among these grids.
 
 ##Output
 
-The programs takes as input `nearest_stars.txt` by default and outputs a list of names of all the stars in the file. Then the program outputs `X-Y` then `X-Z` and then `Y-Z` projection of the data. `S` shows the location of `SUN`. The nearest 9 stars have been numbered from 1-9 and due to coordinate compression, some stars may not be recognized as different stars in 2-D. ***And is different projection different stars may seem nearest, but the numbering has been done based on the real distance.***<br>Sample output Screen shot:<br>
+The programs takes as input `nearest_stars.txt` by default and outputs a list of names of all the stars in the file. Then the program outputs `X-Y` then `X-Z` and then `Y-Z` projection of the data. `S` shows the location of `SUN`. The nearest 9 stars have been numbered from 1-9 and due to coordinate compression, some stars may not be recognized as different stars in 2-D. ***And is different projection different stars may seem nearest, but the numbering has been done based on the real distance.***<br><br>Sample partial output Screen shot:<br>
 ![A partial screen shot to output](http://s13.postimg.org/i6i32c1af/Capture.png)
