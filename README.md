@@ -29,4 +29,5 @@ A linked list implementation of sparse matrix.  Provided methods are:<br>
 
 ##Output
 
-The programs takes as input `nearest_stars.txt` by default and outputs a list of names of all the stars in the file. Then the program outputs `X-Y` then `X-Z` and then `Y-Z` projection of the data. `S` shows the location of `SUN`. The nearest 9 stars have been numbered from 1-9 and due to coordinate compression, some stars may not be recognized as different stars in 2-D. ***And is different projection different stars may seem nearest, but the numbering has been done based on the real distance.***
+The programs takes as input `nearest_stars.txt` by default and outputs a list of names of all the stars in the file. Then the program outputs `X-Y` then `X-Z` and then `Y-Z` projection of the data. `S` shows the location of `SUN`. The nearest 9 stars have been numbered from 1-9 and due to coordinate compression, some stars may not be recognized as different stars in 2-D. ***And is different projection different stars may seem nearest, but the numbering has been done based on the real distance.***<br><br>
+![A partial screen shot to output](http://s13.postimg.org/i6i32c1af/Capture.png)
